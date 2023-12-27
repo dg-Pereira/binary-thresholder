@@ -41,6 +41,9 @@ def main():
     # Load the image
     image = cv2.imread(sys.argv[1])
 
+    if image is None:
+        exit()
+
     # Parse command-line arguments
     tolerance = int(sys.argv[2])
     target_color = [int(c) for c in sys.argv[3].split(',')]
